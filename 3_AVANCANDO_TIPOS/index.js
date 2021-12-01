@@ -1,19 +1,19 @@
 "use strict";
 // 1 - arrays
-var nums = [1, 2, 3];
+let nums = [1, 2, 3];
 nums.push(5);
 console.log(nums[2]);
 // nums.push('a')
 // nums = 'teste'
-var nomes = ['Matheus', 'Pedro'];
+const nomes = ['Matheus', 'Pedro'];
 // nomes.push(2)
 // 2 - outra sintaxe de array
-var numbers = [100, 200];
+const numbers = [100, 200];
 numbers.push(200);
 // numbers.push('teste')
 console.log(numbers[1]);
 // 3 - any
-var arr = [1, 'teste', true, { nome: 'Matheus' }];
+const arr = [1, 'teste', true, { nome: 'Matheus' }];
 console.log(arr);
 arr.push([1, 2, 3]);
 console.log(arr);
@@ -25,22 +25,22 @@ soma(4, 5);
 // soma('ads', 1)
 // 5 - retorno de funcao
 function greeting(name) {
-    return "Ol\u00E1 ".concat(name, "!");
+    return `Olá ${name}!`;
     // return 1
 }
-console.log(greeting("Matheus"));
+console.log(greeting('Matheus'));
 // greeting(1)
 // 6 - funcoes anonimas
 setTimeout(function () {
-    var sallary = 1000;
+    const sallary = 1000;
     // console.log(parseFloat(sallary))
 }, 100);
 // 7 - tipos de objetos
 function passCoordinates(coord) {
-    console.log("X coordinates: " + coord.x);
-    console.log("X coordinates: " + coord.y);
+    console.log('X coordinates: ' + coord.x);
+    console.log('X coordinates: ' + coord.y);
 }
-var objCoord = { x: 10, y: 5 };
+const objCoord = { x: 10, y: 5 };
 passCoordinates(objCoord);
 // 8 - propriedades opcionais
 function showNumbers(a, b, c) {
@@ -54,25 +54,73 @@ showNumbers(4, 8);
 // 9 - validando parâmetro opcional
 function advancedGreeting(firstName, lastName) {
     if (lastName !== undefined) {
-        console.log("Ol\u00E1, ".concat(firstName, " ").concat(lastName, ", tudo bem?"));
+        console.log(`Olá, ${firstName} ${lastName}, tudo bem?`);
     }
-    console.log("Ol\u00E1, ".concat(firstName, ", tudo bem?"));
+    console.log(`Olá, ${firstName}, tudo bem?`);
 }
-advancedGreeting("Matheus", "Battisti");
-advancedGreeting("João");
+advancedGreeting('Matheus', 'Battisti');
+advancedGreeting('João');
 // 10 - union type
 function showBalance(balance) {
-    console.log("O saldo da conta \u00E9 R$".concat(balance));
+    console.log(`O saldo da conta é R$${balance}`);
 }
 showBalance(500);
-showBalance("100");
+showBalance('100');
 // 11 - mais sobre union types
 function showUserRole(role) {
     if (typeof role === 'boolean') {
-        console.log("Usuário não aprovado!");
+        console.log('Usuário não aprovado!');
     }
-    console.log("O usu\u00E1rio \u00E9 um: ".concat(role));
+    console.log(`O usuário é um: ${role}`);
 }
 showUserRole(false);
-showUserRole("Admin");
-showUserRole("Editor");
+showUserRole('Admin');
+showUserRole('Editor');
+function showId(id) {
+    console.log(`O ID é: ${id}`);
+}
+showId('15');
+showId(20);
+function userDetails(user) {
+    console.log(`Nome: ${user.name}`);
+    console.log(`Sobrenome: ${user.surname}`);
+}
+userDetails({ name: 'Matheus', surname: 'Battisti' });
+function showCoords(obj) {
+    console.log(`x: ${obj.x}, y: ${obj.y}, z: ${obj.z}`);
+}
+const itemCoords = {
+    x: 10,
+    y: 15,
+    z: 12,
+};
+showCoords(itemCoords);
+const randomNumber = 10;
+const somePerson = { name: 'João', age: 25 };
+console.log(somePerson);
+// type personType = {
+//     age: number
+// }
+// 15 - literal types
+let test;
+test = 'testando';
+// test = "opa"
+function showDirection(direction) {
+    console.log(`The direction is: ${direction}`);
+}
+showDirection('left');
+showDirection('center');
+//showDirection("up")
+// 16 - non-null assertion
+const p = document.getElementById('some-p');
+console.log(p.innerText);
+// 17 - big int
+let n;
+// n = 1
+n = 1000n;
+// console.log(n + 1)
+console.log(n + 10n);
+// 17 - symbol
+let symbolA = Symbol('a');
+let symbolB = Symbol('a');
+console.log(symbolA === symbolB);
