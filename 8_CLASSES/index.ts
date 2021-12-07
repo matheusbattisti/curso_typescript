@@ -97,3 +97,183 @@ class Truck {
 const myTruck = new Truck("Volvo", 400)
 
 myTruck.showDetails()
+
+// 7 - getter
+class Person {
+  name
+  surname
+
+  constructor(name: string, surname: string) {
+    this.name= name
+    this.surname = surname
+  }
+
+  get fullName() {
+    return this.name + " " + this.surname
+  }
+}
+
+const matheusBattisti = new Person("Matheus", "Battisti")
+
+console.log(matheusBattisti.fullName)
+
+// 8 - setter
+class Coords {
+  x!: number
+  y!: number
+
+  set fillX(x: number) {
+    if(x === 0) {
+      return
+    }
+
+    this.x = x
+
+    console.log("X inserido com sucesso!")
+
+  }
+
+  set fillY(y: number) {
+    if(y === 0) {
+      return
+    }
+
+    this.y =y
+
+    console.log("Y inserido com sucesso!")
+
+  }
+} 
+
+const myCoords = new Coords()
+
+myCoords.fillX = 15
+
+myCoords.fillY = 0
+
+console.log(myCoords)
+
+
+// 9 - implements
+interface showTitle {
+  itemTitle(): string
+}
+
+class blogPost implements showTitle {
+
+  title
+
+  constructor(title: string) {
+    this.title = title
+  }
+
+  itemTitle() {
+    return `O título do post é: ${this.title}`
+  }
+}
+
+const myPost = new blogPost("Hello World")
+
+console.log(myPost.itemTitle())
+
+// 10 - override de métodos
+class Base {
+  someMethod() {
+    console.log("Alguma coisa!")
+  }
+}
+
+class Nova extends Base {
+  someMethod() {
+    console.log("Outra coisa!")
+  }
+}
+
+const myNewClass = new Nova()
+
+myNewClass.someMethod()
+
+// 11 - public
+class C {
+  public x = 10
+}
+
+const cInstance = new C()
+
+console.log(cInstance.x)
+
+// 12 - protected
+class D {
+  protected x = 10
+
+  protected protectedMethod() {
+    console.log("Estou protegido!")
+  }
+}
+
+class E extends D {
+
+  showX() {
+    console.log("X: " + this.x)
+  }
+
+  useMethod() {
+    this.protectedMethod()
+  }
+
+}
+
+class F extends D {
+}
+
+const eInstance = new E()
+
+eInstance.showX()
+
+eInstance.useMethod()
+
+const fInstance = new F()
+
+// fInstance.showX()
+
+// 13 - private
+class PrivateClass {
+  private name = "Private"
+
+  showName() {
+    console.log(this.name)
+  }
+
+  private privateMethod() {
+    console.log("Sou privado!")
+  }
+
+  showPrivateMethodResult() {
+    this.privateMethod()
+  }
+}
+
+const pClass = new PrivateClass()
+
+pClass.showName()
+
+pClass.showPrivateMethodResult()
+
+// class TestingPrivate extends PrivateClass {
+//   myMethod() {
+//     this.privateMethod()
+//   }
+// }
+
+// 14 - static members
+class StaticMembers {
+  static prop = "Teste static"
+
+  static staticMethod() {
+    console.log("Este método é static!")
+  }
+}
+
+console.log(StaticMembers.prop)
+
+StaticMembers.staticMethod()
