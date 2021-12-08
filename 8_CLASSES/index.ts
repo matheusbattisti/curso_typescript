@@ -277,3 +277,93 @@ class StaticMembers {
 console.log(StaticMembers.prop)
 
 StaticMembers.staticMethod()
+
+// 15 - generic class
+class Item<T, U> {
+  first
+  second
+
+  constructor(first: T, second: U) {
+    this.first = first
+    this.second = second
+  }
+
+  get showFirst() {
+    return `O first é: ${this.first}`
+  }
+}
+
+const newItem = new Item("caixa", "surpresa")
+
+console.log(newItem.showFirst)
+
+
+// 16 - parameter properties
+class ParameterClass {
+  constructor(public name: string, private qty: number, private price: number) {
+    this.name = name
+    this.qty = qty
+  }
+
+  get showQty() {
+    return `Qtd total: ${this.qty}` 
+  }
+
+  get showPrice() {
+    return `Preço: R$${this.price}`
+  }
+}
+
+const newShirt = new ParameterClass("Camisa", 5, 19.99)
+
+console.log(newShirt.showQty)
+
+// console.log(newShirt.qty)
+
+// 17 - class expression
+const myClass = class<T> {
+  name
+
+  constructor (name: T) {
+    this.name = name
+  }
+} 
+
+const pessoa = new myClass("Jones")
+
+console.log(pessoa.name)
+
+// 18 - abstract class
+abstract class AbstractTest {
+  abstract showName(): void
+}
+
+// const newObj = new AbstractTest()
+
+class AbstractExample extends AbstractTest {
+  name: string
+
+  constructor(name: string) {
+    super()
+    this.name = name
+  }
+
+  showName() {
+    console.log(`O nome é: ${this.name}`)
+  }
+}
+
+const newObjAbstract = new AbstractExample("Josias")
+
+newObjAbstract.showName()
+
+// 19 - relacoes entre classes
+class Dog {
+  name!: string
+}
+
+class Cat {
+  name!: string
+}
+
+const doguinho: Dog = new Cat()
