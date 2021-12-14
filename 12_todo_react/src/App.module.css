@@ -1,0 +1,36 @@
+.main {
+  min-height: 60vh;
+  text-align: center;
+  padding: 2em;
+}
+
+.main h2 {
+  margin-bottom: 1.2em;
+}
+
+.todo_form form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.todo_form form input {
+  padding: 8px 15px;
+  margin-bottom: 1.5em;
+  border-radius: 0;
+  border: 1px solid #282c34;
+}
+
+.todo_form form input[type="submit"] {
+  background-color: #61dafb;
+  border: 1px solid #61dafb;
+  color: #000;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.todo_form form input[type="submit"]:hover {
+  background-color: #fff;
+  border-color: #282c34;
+}
