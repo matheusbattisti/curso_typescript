@@ -3,3 +3,7 @@
   margin: 0;
   font-family: Helvetica;
 }
+
+.hide {
+  display: none !important;
+}
