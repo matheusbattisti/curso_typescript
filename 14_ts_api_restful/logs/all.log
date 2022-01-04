@@ -1,0 +1,14 @@
+2022-01-03 21:26:54:2654 [31merror[39m: [31mThis is an error log[39m
+2022-01-03 21:29:17:2917 [32minfo[39m: [32mApp rodando na porta: 3000[39m
+2022-01-03 21:29:32:2932 [32minfo[39m: [32mApp rodando na porta: 3000[39m
+2022-01-03 21:29:59:2959 [32minfo[39m: [32mDB Connected[39m
+2022-01-03 21:29:59:2959 [32minfo[39m: [32mApp rodando na porta: 3000[39m
+2022-01-03 21:30:04:304 [31merror[39m: [31mCould not connect to db[39m
+2022-01-03 21:30:11:3011 [32minfo[39m: [32mDB Connected[39m
+2022-01-03 21:30:11:3011 [32minfo[39m: [32mApp rodando na porta: 3000[39m
+2022-01-03 21:32:12:3212 - [32minfo[39m: [32mDB Connected[39m
+2022-01-03 21:32:12:3212 - [32minfo[39m: [32mApp rodando na porta: 3000[39m
+2022-01-03 21:41:13:4113 - [32minfo[39m: [32mDB Connected[39m
+2022-01-03 21:41:13:4113 - [32minfo[39m: [32mApp rodando na porta: 3000[39m
+2022-01-03 21:41:29:4129 - [35mhttp[39m: [35mGET /api/test 200 11 - 2.035 ms[39m
+[35m[39m
